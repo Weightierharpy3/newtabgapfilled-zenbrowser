@@ -1,0 +1,23 @@
+
+@-moz-document url-prefix("chrome:") {
+#tabbrowser-tabs {
+  display: inline-flex !important;
+}
+#newtab-button-container {
+  flex-grow: 1 !important;
+  order: 5 !important;
+}
+#vertical-tabs-newtab-button {
+  flex-grow: 1 !important;
+  height: auto !important;
+  align-items: stretch !important;
+}
+#tabbrowser-arrowscrollbox {
+/*When setting display: inline-flex on #tabbrowser-tabs from remote loads correctly
+But it makes arrowscrollbox fail to render when the userChrome loads on browser startup
+Couldn't figure out why yet*/
+  max-height: unset !important; 
+  flex-flow: 1;
+}
+}
+    
